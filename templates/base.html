@@ -1,0 +1,52 @@
+{% load static %}
+{% url 'home' as home_url %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>{% block title %} Онлайн-магазин {% endblock %}</title>
+  </head>
+  <body>
+   <nav class="site-header sticky-top bg-secondary py-1">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a href="{% url 'home' %}" class="text-white text-decoration-none py-2">
+         <img src="https://img.icons8.com/emoji/48/000000/mobile-phone.png"
+             width="24" height="24" class="py-auto"/>
+        Мобильный выбор
+      </a>
+        <a class="py-2 d-none d-md-inline-block text-white text-decoration-none" href="{% url 'landing:home' %}">Заявки</a>
+        <a class="py-2 d-none d-md-inline-block text-white text-decoration-none" href="#">Продукты</a>
+        <a class="py-2 d-none d-md-inline-block text-white text-decoration-none" href="#">Смартфоны</a>
+        <a class="py-2 d-none d-md-inline-block text-white text-decoration-none" href="#">Планшеты</a>
+        <a class="py-2 d-none d-md-inline-block text-white text-decoration-none" href="#">Корзина</a>
+        <a class="py-2 d-none d-md-inline-block text-white text-decoration-none" href="#">О сайте</a>
+        <a href="/admin" class="py-2 d-none d-md-inline-block text-white text-decoration-none"> Admin</a>
+    </div>
+
+   </nav>
+
+  {% block content %} {% endblock %}
+
+   <footer class="bg-secondary py-5">
+     <div class="container">
+         <div class="small text-center text-light">
+             Copyright © 2020 - Online Shop
+         </div>
+     </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

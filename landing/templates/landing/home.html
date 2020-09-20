@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Landing - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+    <section class="landing-section" style="background-image: url({% static 'img/bg-draw.jpg' %})">
+
+    <div class="container">
+                    <!--Users Badge-->
+                <div class="container">
+                <div class="row">
+                    <div class="col-md-3 offset-9">
+                    <a href="{% url 'landing:users' %}" class="badge badge-info">
+                    Users
+                    </a>
+                    </div>
+                </div>
+                </div>
+
+        <div class="row">
+
+            <div class="col-md-6 m-auto pt-5">
+            <h1 class="text-center">Магазин скоро откроется</h1>
+            </div>
+
+            <form action="" method="post">{% csrf_token %}
+
+            <div class="modal fade text-dark" id="contactModal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Оставьте заявку</h5>
+                <button class="close" data-dismiss="modal">
+                <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                <label for="name">Имя и фамилия</label>
+                <input name="{{ form.name.name }}"
+                       type="text" class="form-control" id="name">
+                </div>
+
+            <div class="form-group">
+            <label for="email">Email</label>
+            <input  name="{{ form.email.name }}"
+                    type="email" class="form-control" id="email">
+            </div>
+
+            <div class="form-group">
+            <label for="password">Пароль</label>
+            <input name="{{ form.password.name }}"
+                   type="password" class="form-control" id="password">
+            </div>
+
+            <div class="form-group">
+            <label for="confirmPassword">Подтвердить пароль</label>
+            <input name="{{ form.confirm_password.name }}"
+                   type="password" class="form-control" id="confirmPassword">
+            </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="button-site">Отправить данные</button>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            </form>
+
+  </div>
+                <div class="d-flex justify-content-center col-md-4 offset-4 my-5">
+                <button class="button-site" data-toggle="modal" data-target="#contactModal">
+                Оставьте заявку
+                </button>
+                </div>
+
+</div>
+
+    </section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
