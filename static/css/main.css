@@ -38,17 +38,21 @@
 
     --font-sans: var(--font-family-sans-serif);
     --font-serif: var(--font-family-serif);
+    --color-accent: var(--orange);
+    --color-dark-accent: var(--dark-orange);
 }
 
 
 body {
-    font-family: var(--font-sans)
+    font-family: var(--font-sans);
+    font-weight: 400;
 }
 
-
-
+.badge {
+    background-color: var(--indigo);
+}
 .carousel-inner {
-    background-color: #6c757e;
+    background-color: var(--secondary);
 }
 
 .carousel-img {
@@ -72,14 +76,14 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
-    background-color: var(--orange);
+    background-color: var(--color-accent);
     transition: background .1s linear;
     border: 0;
     cursor: pointer;
 }
 
 .button-site:hover {
-   background-color: var(--dark-orange);
+   background-color: var(--color-dark-accent);
    color: #fff;
    text-decoration: none;
    border: 0;
